@@ -14,6 +14,7 @@ export class BookingComponent implements OnInit {
   rooms: myRoommodel[]= []
   @Input() booking: mybookingmodel;
 
+  Type: string = "";
   hoveredDate: NgbDate | null = null;
 
   fromDate: Date;
@@ -50,9 +51,13 @@ export class BookingComponent implements OnInit {
     return date.equals(new NgbDate(this.fromDate.getFullYear(), this.fromDate.getMonth(), this.fromDate.getDay())) || (this.toDate && date.equals(new NgbDate(this.toDate.getFullYear(), this.toDate.getMonth(), this.toDate.getDay()))) || this.isInside(date) || this.isHovered(date);
   }
 
-  getRooms(){
+  setType(type:string) {
+    this.Type = type;
+  }
+
+  getRooms() {
     if (this.toDate != null) {
-      this.Roomservice.ReadAllRooms(this.fromDate.toISOString(), this.toDate != null ? this.toDate.toISOString() : "").subscribe(x => {
+      this.Roomservice.ReadAllRooms(this.fromDate.toISOString(), this.toDate != null ? this.toDate.toISOString() : "", this.Type).subscribe(x => {
         console.log(x)
         this.rooms = x
         

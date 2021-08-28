@@ -12,8 +12,8 @@ export class RoomlistService {
 
   constructor(private http: HttpClient) { }
 
-  ReadAllRooms(dateFrom: string, dateTo: string): Observable<myRoommodel[]>{
-    return this.http.get<myRoommodel[]>(`${this.API}/routes/readallrooms?dateFrom=${dateFrom}&dateTo=${dateTo}`)
+  ReadAllRooms(dateFrom: string, dateTo: string, type:string): Observable<myRoommodel[]>{
+    return this.http.get<myRoommodel[]>(`${this.API}/routes/readallrooms?dateFrom=${dateFrom}&dateTo=${dateTo}&type=${type}`)
   }
 
   AddRoom(room: myRoommodel): Observable<myRoommodel>{

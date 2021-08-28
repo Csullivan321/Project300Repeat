@@ -29,10 +29,11 @@
   <button type="button" class="btn btn-primary">Room Type</button>
   <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
     <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
-    <div class="dropdown-menu" ngbDropdownMenu>
-      <button ngbDropdownItem>Single</button>
-      <button ngbDropdownItem>Double</button>
-      <button ngbDropdownItem>Suite</button>
+    <div class="dropdown-menu" ngbDropdownMenu #ddType>
+      <button ngbDropdownItem (click)="setType('')" >All</button>
+      <button ngbDropdownItem (click)="setType('Single')" >Single</button>
+      <button ngbDropdownItem (click)="setType('Double')" >Double</button>
+      <button ngbDropdownItem (click)="setType('Suite')" >Suite</button>
     </div>
   </div>
 </div>
