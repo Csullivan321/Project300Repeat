@@ -1,5 +1,5 @@
 export interface mybookingmodel{
-    id?: Number,
+    id: Number,
     Type?: String,
     Price?: Number,
     Email: String,

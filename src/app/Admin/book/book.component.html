@@ -1,6 +1,9 @@
 <div>
     <div class="row">
         <div class="col">
+            {{book.id}}
+        </div>
+        <div class="col">
             {{book.Email}}
         </div>
         <div class="col">
@@ -18,8 +21,8 @@
         <div class="col">
             {{book.DateTo | date}}
         </div>
-        <div>
-            <button (click)="Delete()"  class="btn btn-primary">Search</button>
+        <div class="col">
+            <button (click)="Delete()"  class="btn btn-primary">Delete</button>
         </div>
     </div> 
 </div>

@@ -28,7 +28,7 @@ export class RoomlistService {
     return this.http.post<mybookingmodel>(`${this.API}/routes/addBooking`, booking);
   }
 
-  DeleteBooking(id: Number):Observable<Number> {
-    return this.http.post<Number>(`${this.API}/routes/deletebooking`, 0)
+  DeleteBooking(id: Number):Observable<any> {
+    return this.http.post<any>(`${this.API}/routes/deletebooking`, {_id: id})
   }
 }

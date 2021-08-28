@@ -2,6 +2,9 @@
 
 <div class="container">
   <div class="row">
+        <div class="col">
+            ID
+        </div>
       <div class="col">
           Email
       </div>
@@ -20,7 +23,9 @@
     <div class="col">
         DateTo
     </div>
-      
+    <div class="col">
+        Delete
+    </div>
   </div> 
   <div *ngFor="let booking of bookings">
       <app-book [book]="booking"></app-book>
