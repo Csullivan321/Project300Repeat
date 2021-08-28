@@ -1,0 +1,30 @@
+<p>managebookings works!</p>
+
+<button (click)= "getBookings()"  class="btn btn-primary">Search</button>
+
+<div class="container">
+  <div class="row">
+      <div class="col">
+          Id
+      </div>
+      <div class="col">
+          Type
+      </div>
+      <div class="col">
+          Price
+      </div>
+      <div class="col">
+        Number
+    </div>
+    <div class="col">
+        DateFrom
+    </div>
+    <div class="col">
+        DateTo
+    </div>
+      
+  </div> 
+  <div *ngFor="let booking of bookings">
+      <app-booking [booking]="booking"></app-booking>
+  </div>
+  

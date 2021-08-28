@@ -1,0 +1,58 @@
+<ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+</ngb-datepicker>
+
+<ng-template #t let-date let-focused="focused">
+  <span class="custom-day"
+        [class.focused]="focused"
+        [class.range]="isRange(date)"
+        [class.faded]="isHovered(date) || isInside(date)"
+        (mouseenter)="hoveredDate = date"
+        (mouseleave)="hoveredDate = null">
+    {{ date.day }}
+  </span>
+</ng-template>
+
+<hr>
+
+<pre>From: {{ fromDate | json }} </pre>
+<pre>To: {{ toDate | json }} </pre>
+
+  
+
+
+
+<div class="btn-group mr-3">
+  <button type="button" class="btn btn-primary">Room Type</button>
+  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem>Single</button>
+      <button ngbDropdownItem>Double</button>
+      <button ngbDropdownItem>Suite</button>
+    </div>
+  </div>
+</div>
+<button (click)= "getRooms()"  class="btn btn-primary">Search</button>
+
+<div class="container">
+  <div class="row">
+      <div class="col">
+          Type
+      </div>
+      <div class="col">
+          Price
+      </div>
+      <div class="col">
+          Number
+      </div>
+      
+  </div> 
+  <div *ngFor="let room of rooms">
+      <app-room [room]="room"></app-room>
+  </div>
+  
+</div>
+
+
+  
+  
