@@ -49,12 +49,16 @@
       <div class="col">
           Number
       </div>
-      
+      <div class="col">
+        Email
+      </div>
+      <div class="col">
+        Book
+    </div>
   </div> 
   <div *ngFor="let room of rooms">
-      <app-room [room]="room"></app-room>
+      <app-room (SearchAgain)="getRooms()" [room]="room" [dateFrom]="fromDate" [dateTo]="toDate"></app-room>
   </div>
-  
 </div>
 
 

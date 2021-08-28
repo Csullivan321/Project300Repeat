@@ -23,4 +23,12 @@ export class RoomlistService {
   ReadBookings():Observable<mybookingmodel[]>{
     return this.http.get<mybookingmodel[]>(`${this.API}/routes/readallbookings`)
   }
+
+  ReserveRoom(booking:mybookingmodel):Observable<mybookingmodel> {
+    return this.http.post<mybookingmodel>(`${this.API}/routes/addBooking`, booking);
+  }
+
+  DeleteBooking(id: Number):Observable<Number> {
+    return this.http.post<Number>(`${this.API}/routes/deletebooking`, 0)
+  }
 }

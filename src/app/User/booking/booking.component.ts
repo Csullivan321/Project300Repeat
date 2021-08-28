@@ -23,7 +23,7 @@ export class BookingComponent implements OnInit {
     this.fromDate = new Date(calendar.getToday().year, calendar.getToday().month -1, calendar.getToday().day);
     const toDateRaw = calendar.getNext(calendar.getToday(), 'd', 10);
     this.toDate = new Date(toDateRaw.year, toDateRaw.month -1, toDateRaw.day);
-    this.booking = { id: 0, Type: '', Price: 0, Number: 0, DateFrom: new Date(), DateTo: new Date() }
+    this.booking = { id: 0, Type: '', Price: 0, Number: 0, DateFrom: new Date(), DateTo: new Date(), Email: '' }
   }
 
   onDateSelection(date: NgbDate) {

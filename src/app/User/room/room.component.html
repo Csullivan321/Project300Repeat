@@ -9,7 +9,12 @@
         <div class="col">
             {{room.Number}}
         </div>
-       
+        <div class="col">
+            <input type="email" #email>
+        </div>
+        <div class="col">
+            <button (click)= "Reserve(email.value)" class="btn btn-primary">Reserve</button>
+        </div>
     </div> 
 </div>
 
