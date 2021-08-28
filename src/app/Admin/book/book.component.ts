@@ -9,11 +9,12 @@ import { mybookingmodel } from '../../Models/mybookingmodel';
 export class BookComponent implements OnInit {
 
   @Input() book: mybookingmodel
+
   constructor() { 
     this.book = {id:0, Type: "", Price:0, Number:0, DateFrom: new Date(), DateTo: new Date()  }
   }
 
   ngOnInit(): void {
   }
-
+  
 }

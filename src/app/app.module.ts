@@ -10,7 +10,7 @@ import { LoginComponent } from './Auth/login/login.component';
 import { RegisterComponent } from './Auth/register/register.component';
 import { BookingComponent } from './User/booking/booking.component';
 import { RoomComponent } from './User/room/room.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ManagebookingsComponent } from './Admin/managebookings/managebookings.component';
 import { BookComponent } from './Admin/book/book.component';
 

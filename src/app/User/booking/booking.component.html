@@ -1,5 +1,8 @@
-<ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+<ngb-datepicker #dp1 (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
 </ngb-datepicker>
+
+<!-- <ngb-datepicker #dp2 (dateSelect)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t" outsideDays="hidden">
+</ngb-datepicker> -->
 
 <ng-template #t let-date let-focused="focused">
   <span class="custom-day"
@@ -12,10 +15,11 @@
   </span>
 </ng-template>
 
+
 <hr>
 
-<pre>From: {{ fromDate | json }} </pre>
-<pre>To: {{ toDate | json }} </pre>
+<pre>From: {{ fromDate | date }} </pre>
+<pre>To: {{ toDate | date }} </pre>
 
   
 

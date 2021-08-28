@@ -12,14 +12,15 @@ export class RoomlistService {
 
   constructor(private http: HttpClient) { }
 
-  ReadAllRooms(): Observable<myRoommodel[]>{
-    return this.http.get<myRoommodel[]>(`${this.API}/routes/readallrooms`)
+  ReadAllRooms(dateFrom: string, dateTo: string): Observable<myRoommodel[]>{
+    return this.http.get<myRoommodel[]>(`${this.API}/routes/readallrooms?dateFrom=${dateFrom}&dateTo=${dateTo}`)
   }
+
   AddRoom(room: myRoommodel): Observable<myRoommodel>{
     return this.http.post<myRoommodel>(`${this.API}/routes/addRoom`, room)
   }
 
   ReadBookings():Observable<mybookingmodel[]>{
-    return this.http.get<mybookingmodel[]>(`${this.API}/routes/addBooking`)
+    return this.http.get<mybookingmodel[]>(`${this.API}/routes/readallbookings`)
   }
 }

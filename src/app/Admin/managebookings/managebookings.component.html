@@ -1,5 +1,3 @@
-<p>managebookings works!</p>
-
 <button (click)= "getBookings()"  class="btn btn-primary">Search</button>
 
 <div class="container">
@@ -25,6 +23,5 @@
       
   </div> 
   <div *ngFor="let booking of bookings">
-      <app-booking [booking]="booking"></app-booking>
+      <app-book [book]="booking"></app-book>
   </div>
-  
